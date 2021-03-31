@@ -1,0 +1,44 @@
+﻿@model Buffet.ViewModels.Home.IndexViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@ViewBag.InformacaoQualquer
+@ViewData["informacao"]
+
+@Model.InformacaoQualquer
+@Model.Titulo
+
+<div class="text-center">
+    <h1 class="display-4">Bem Vindo!</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<partial name="_DadosUsuario" for="@Model.UsuarioLogado"></partial>
+
+<ul>
+    @foreach (var cliente in @Model.Clientes) {
+        <li>O cliente @cliente.Nome possui o ID: @cliente.Id</li>
+    }
+</ul>
+
+
+
+@section Styles{
+    <link rel="stylesheet" href="~/css/home-index.css"/>
+}
+
+@section Scripts{
+    <script src="~/js/home-index.js" asp-append-version="true"></script>
+}
+
+@section ScriptsFluidos{
+    <script>
+    
+    </script>
+}
+
+@section InformacaoDeRodape{
+    <p>Página de boas vindas</p>
+}

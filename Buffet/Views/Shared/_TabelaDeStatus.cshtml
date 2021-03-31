@@ -1,0 +1,17 @@
+﻿@using Buffet.ViewModels.Shared
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Nome</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (Status status in @Model) {
+        <tr>
+            <td>@status.Id</td>
+            <td>@status.Descricao</td>
+        </tr>
+    }
+    </tbody>
+</table>
